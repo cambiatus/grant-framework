@@ -101,13 +101,13 @@
 ### Team Member Repos
 
 - https://github.com/lucca65
-- https://github.com/NeoVier
+- https://github.com/henriquecbuss
 - https://github.com/MatheusBuss
 
 ### Team LinkedIn Profiles (if available)
 
 - https://www.linkedin.com/in/julienlucca/
-- https://www.linkedin.com/<person_2>
+- https://www.linkedin.com/in/henrique-buss-5b85801b4/
 
 ## Development Status
 
