@@ -90,20 +90,23 @@
 
 ### Team Org Repos
 
-- https://github.com/<your_organization>
-- https://github.com/<your_organization>/<project_1>
-- https://github.com/<your_organization>/<project_2>
+- https://github.com/cambiatus
+- https://github.com/cambiatus/frontend
+- https://github.com/cambiatus/contracts
+- https://github.com/cambiatus/backend
+- https://github.com/cambiatus/event-source
 
 > Please also provide the GitHub accounts of all team members. If they contain no activity, references to projects hosted elsewhere or live are also fine.
 
 ### Team Member Repos
 
-- https://github.com/<team_member_1>
-- https://github.com/<team_member_2>
+- https://github.com/lucca65
+- https://github.com/NeoVier
+- https://github.com/MatheusBuss
 
 ### Team LinkedIn Profiles (if available)
 
-- https://www.linkedin.com/<person_1>
+- https://www.linkedin.com/in/julienlucca/
 - https://www.linkedin.com/<person_2>
 
 ## Development Status
