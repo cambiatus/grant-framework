@@ -280,144 +280,117 @@ This feature will require interactions on:
 - Frontend, which has not started yet
 
 Some resources:
-- Figma reference with some discussion (in brazilian portuguese) 
-- Slides for the presentation of Role and Permissions
+- [Figma reference with some discussion (in brazilian portuguese)](https://www.figma.com/file/IYaSqUD58quAZMIhqdi7WA/Roles-%26-Permissions?node-id=0%3A1)
+- [Slides for the presentation of Role and Permissions](https://www.figma.com/file/N724ADHvSImTQkYYnIPOoh/Proposta-ENF_Roles-%26-Permissions)
 
 ## Development Roadmap
 
 
-Milestone 1 — Provide structural changes for adding context / metadata to an user participation in a community, mostly backend work with no visible changes
-Estimated duration: 1 month
-FTE: 6
-Costs: 10,000.00 USD
-License
-GNU Affero General Public License v3.0
-Documentation
-All documentation on this milestone is delivered by code and release notes, as its intended to be consumed by code
-Testing Guide	
-Core functions will be fully covered by unit tests to ensure functionality and robustness. Related repos will contain testing instructions.
-Test setup and instructions are already present in our https://github.com/cambiatus/backend, only new tests will be added. Existing instructions will cover them
-Application interface to EOSIO
-We will create an integration layer, consisting of a blockchain sync solution like demux implementation or similar to digest blockchain data into our own centralized database, for caching. 
-Front-End / User Interface
-Minor adjustments to comply with the new data structures, but no new screens or other visible changes
-Caching layer	/ API Interface
-Minor adjustments to comply with new data structures. 
-Provide new entities like role, permission
-Updating existing entities like network and user
+### Milestone 1 — Provide structural changes for adding context / metadata to an user participation in a community, mostly backend work with no visible changes
+- **Estimated duration:** 1 month
+- **FTE:** 6
+- **Costs:** 10,000.00 USD
+- **License:** GNU Affero General Public License v3.0
+- **Documentation:** All documentation on this milestone is delivered by code and release notes, as its intended to be consumed by code
+- **Testing Guide:** Core functions will be fully covered by unit tests to ensure functionality and robustness. Related repos will contain testing instructions. Test setup and instructions are already present in our https://github.com/cambiatus/backend, only new tests will be added. Existing instructions will cover them
+- **Application interface to EOSIO:** We will create an integration layer, consisting of a blockchain sync solution like demux implementation or similar to digest blockchain data into our own centralized database, for caching. 
+- **Front-End / User Interface:** Minor adjustments to comply with the new data structures, but no new screens or other visible changes
+- **Caching layer	/ API Interface:** Minor adjustments to comply with new data structures; Provide new entities like role, permission;Updating existing entities like network and user. 
+
 This Milestone is partially completed and can be check on some Pull Requests:
-https://github.com/cambiatus/contracts/pull/33
-https://github.com/cambiatus/contracts/pull/40
-https://github.com/cambiatus/backend/pull/200
-https://github.com/cambiatus/frontend/pull/676
-https://github.com/cambiatus/event-source/pull/34
-https://github.com/cambiatus/event-source/pull/36
+- https://github.com/cambiatus/contracts/pull/33
+- https://github.com/cambiatus/contracts/pull/40
+- https://github.com/cambiatus/backend/pull/200
+- https://github.com/cambiatus/frontend/pull/676
+- https://github.com/cambiatus/event-source/pull/34
+- https://github.com/cambiatus/event-source/pull/36
 
 
-Milestone 2 - Allow users to earn or receive roles manually from the community admin. Including visible changes
-Estimated Duration: 1 month
-FTE: 3
-Costs: 10,000.00 USD
-Design
-Design screens to experiment with how we are going to allow admins to manage roles inside an community
-Create, Update, Delete roles 
-Assign Roles
-Display roles in profile and related pages
-Display community roles
-Designs are partially done and can be seen here
-Backend
-Based on the screens, develop GraphQL APIs to better serve those screens. Including adding both database and GraphQL entities like user_roles, community_roles, permissions enums
-Frontend
-Add hover for role public view
-Add modal for viewing role modal
-Add links to modals: profile page, community page, user hover, profile modal
-Role cards on the community page
-Role wide cards for the new "Our Roles Page"
+### Milestone 2 - Allow users to earn or receive roles manually from the community admin. Including visible changes
+- **Estimated duration:** 1 month
+- **FTE:** 3
+- **Costs:** 10,000.00 USD
+- **Design:** Design screens to experiment with how we are going to allow admins to manage roles inside an community:
+  -  Create, Update, Delete roles
+  -  Assign Roles
+  -  Display roles in profile and related pages
+  -  Display community roles
+  -  Designs are partially done and can be seen here
+- **Backend:** Based on the screens, develop GraphQL APIs to better serve those screens. Including adding both database and GraphQL entities like `user_roles`, `community_roles`, permissions enums
+- **Frontend:** 
+  - Add hover for role public view
+  - Add modal for viewing role modal
+  - Add links to modals: profile page, community page, user hover, profile modal
+  - Role cards on the community page
+  - Role wide cards for the new "Our Roles Page"
 
-Milestone 3 - Gather feedback on the first round of implementations. No code on this milestone, mostly community building, showcasing and learning sessions to use the newly added feature.
-Estimated Duration: 2 month
-FTE: 6
-Cost: 10,000
-Testing Guide
-Use of navigable prototypes to carry out concept and usability tests with key people (administrators and other members of the community) in order to raise and define hypotheses and mitigate possible functionality errors.
-We will make adjustments to interfaces based on test results.
-2. Documentation and Testing Guide
-We will use our test environment to test the main functionalities and the proposed design
-We will provide both inline documentation of the code and a basic tutorial that explains how a user can use it within their communities. We publish our platform tutorials here: https://medium.com/cambiatus-tutorials
-Feedback gathering and teaching
-We will do live meetings and workshops to showcase basic usage and how existing communities could use this. Meetings will be in English, Spanish and Portuguese, languages that our communities use.
-With feedback we can prioritize next features and adjust as needed
-Design
-Prepare for the next milestone
-Create a basic interface for creating common automations with triggers for number of claims, or specific claims, or selling an item on the shop
-Screen to display automations enabled
-Create and validate mockups
+### Milestone 3 - Gather feedback on the first round of implementations. No code on this milestone, mostly community building, showcasing and learning sessions to use the newly added feature.
+- **Estimated duration:** 2 months
+- **FTE:** 6
+- **Costs:** 10,000.00 USD
+- **Testing Guide:** Use of navigable prototypes to carry out concept and usability tests with key people (administrators and other members of the community) in order to raise and define hypotheses and mitigate possible functionality errors. We will make adjustments to interfaces based on test results.
+- **Documentation and Testing Guide:** We will use our test environment to test the main functionalities and the proposed design. We will provide both inline documentation of the code and a basic tutorial that explains how a user can use it within their communities. We will also publish our platform tutorials here: https://medium.com/cambiatus-tutorials
+- **Feedback gathering and tutorials:** We will do live meetings and workshops to showcase basic usage and how existing communities could use this. Meetings will be in English, Spanish and Portuguese, languages that our communities use. With feedback we can prioritize next features and adjust as needed
+- **Design:** Prepare for the next milestone: 
+  - Basic interface for creating common automations with triggers for number of claims, or specific claims, or selling an item on the shop
+  - Screen to display automations enabled
+  - Create and validate mockups
 
-
-Milestone 4 - Automatically give roles based on onchain triggers. This milestone is more vague, as we need to study how to better implement this. Research phase will be done together with milestone 3, if possible.
-Estimated Duration: 1 month to 2 months
-FTE: 6 
-Cost: 10,000.00 USD
-Research
-Study tools like Chainlink and LiquidApps to check on how we enable oracle-like structure and decentralized automation systems. 
+### Milestone 4 - Automatically give roles based on onchain triggers. This milestone is more vague, as we need to study how to better implement this. Research phase will be done together with milestone 3, if possible.
+- **Estimated duration:** 1 month to 2 months
+- **FTE:** 6
+- **Costs:** 10,000.00 USD
+- **Research:** Study tools like Chainlink and LiquidApps to check on how we enable oracle-like structure and decentralized automation systems. 
 Depending on our findings, plan out a centralized alternative. We can use multisigs to initiate automatic transactions on communities, requiring admins to approve them.
-Contract
-Readonly ACTION for setting up automation on chain, will be used to authorize our backend/Chainlink to setup automation.
-Backend
-No further work will be required if we manage to do this with a solution similar to Chainlink. If not, we will need to develop one similar centralized
-It must allow for triggers based on our contract ACTIONs:
-upsertactions (when actions are changed in a community)
-upsertobjectives (when objectives are changed in a community)
-claimaction (when an user initiates a request for claiming an action)
-verifyclaim (when other users vote to approve/reject a claim)
-reward (when admins reward users a certain amount of tokens)
-Effects:
-assignrole
-Conditions:
-Count: a certain number of times a trigger must be activated
-Time scope: a limit date like "5 days, 1 month" and so on
-Existing roles: a filter that makes sure the affected users have necessary roles
-Extensive tests for those workers
-Frontend
-Screens for assigning roles, managed by community admins
-Rework our notification center, to better display events live
-Commemorative modal for achieving a role
-Admin screens to display existing automation
-Admin screens to enable automation
-Admin screens to create, edit and delete automation
+- **Contract:** Actions to authorize Chainlink (or LiquidApps) to our communities to setup automation.
+- **Backend:** No further work will be required if we manage to do this with a solution similar to Chainlink. If not, we will need to develop one similar centralized. It must allow for **triggers** based on our contract ACTIONs:
+  - `upsertactions` (when actions are changed in a community)
+  - `upsertobjectives` (when objectives are changed in a community)
+  - `claimaction` (when an user initiates a request for claiming an action)
+  - `verifyclaim` (when other users vote to approve/reject a claim)
+  - `reward` (when admins reward users a certain amount of tokens)
+with the following **Effects**:
+  - `assignrole`
+under available **Conditions**:
+  - Count: a certain number of times a trigger must be activated
+  - Time scope: a limit date like "5 days, 1 month" and so on
+  - Existing roles: a filter that makes sure the affected users have necessary roles
+- **Extensive tests for those workers:** Given its complexity, it will required thoughtful testing
+- **Frontend:** 
+  - Screens for assigning roles, managed by community admins
+  - Rework our notification center, to better display events live 
+  - Commemorative modal for achieving a role
+  - Admin screens to display existing automation
+  - Admin screens to enable automation
+  - Admin screens to create, edit and delete automation
 
 
-Milestone 5 - Implement roles scoping for our action claim flow. Only certain roles can validate actions. This is a refactor of an existing feature. Can be done in a different order, as we already have all the requisites on our code. 
-Estimated Duration: 1 month
-FTE: 5
-Cost: 10,000.00 USD
-Contract
-Adjust action/claim flow to use a role as a validator instead of a list of users
-Allow optional specific validator role
-Migrate existing contract data to the new usage of role
-Clean up old data to minimize RAM footprint
-Backend
-Migrate existing database to use new role structure for actions
-Adjust GraphQL entities
-Frontend
-Adjust forms to use roles
-Adjust multiple usages of actions/claims that display a list of validators to display a role instead
-Adjust forms to comply with new contract action params
+### Milestone 5 - Implement roles scoping for our action claim flow. Only certain roles can validate actions. This is a refactor of an existing feature. Can be done in a different order, as we already have all the requisites on our code. 
+- **Estimated duration:** 1 month
+- **FTE:** 5
+- **Costs:** 10,000.00 USD
+- **Contract:** 
+  - Adjust action/claim flow to use a role as a validator instead of a list of users
+  - Allow optional specific validator role; Migrate existing contract data to the new usage of role
+  - Clean up old data to minimize RAM footprint
+- **Backend:**
+  - Migrate existing database to use new role structure for actions
+  - Adjust GraphQL entities
+- **Frontend:** 
+  - Adjust forms to use roles
+  - Adjust multiple usages of actions/claims that display a list of validators to display a role instead
+  - Adjust forms to comply with new contract action params
 
-Milestone 6 - Test, gather feedback and adjust for errors or unexpected edge cases. Final interaction on the feature before its considered done.
-Estimated duration: 1 month
-FTE: 6
-Cost: 10,000
- Testing Guide
-pre-implementation tests analyzing functionality and usability along with the proposed design.
-Documentation
-We will provide both inline documentation of the code and a basic tutorial that explains how a user can use it within their communities. We publish our platform tutorials here: https://medium.com/cambiatus-tutorials
-Feedback gathering and teaching
-We will do live meetings and workshops to showcase basic usage and how existing communities could use this. Meetings will be in English, Spanish and Portuguese, languages that our communities use.
-With feedback we can prioritize next features and adjust as needed
+### Milestone 6 - Test, gather feedback and adjust for errors or unexpected edge cases. Final interaction on the feature before its considered done.
+- **Estimated duration:** 1 month
+- **FTE:** 6
+- **Costs:** 10,000.00 USD
+- **Testing Guide:** pre-implementation tests analyzing functionality and usability along with the proposed design.
+- **Documentation:** We will provide both inline documentation of the code and a basic tutorial that explains how a user can use it within their communities. We publish our platform tutorials here: https://medium.com/cambiatus-tutorials
+- **Feedback gathering and tutorials:** We will do live meetings and workshops to showcase basic usage and how existing communities could use this. Meetings will be in English, Spanish and Portuguese, languages that our communities use. With feedback we can prioritize next features and adjust as needed
 
 
-Future Plans
+## Future Plans
 Our first intent is to use the Roles & Permissions feature within the Cambiatus ecosystem. Our communities will be called to experiment with the feature and our Data Team will be able to gather some insights about how it's been used. We would like to evolve this feature and decouple it from Cambiatus, allowing other Antelope based applications to use it as a way to improve their DAO toolkit. This will be addressed in future versions, but since we are open source, our insights, learnings and how-tos will always be available to anyone interested, and free use under GNU Affero General Public License v3.0.
 
 With our Roles & Permissions implemented, we will address decision making next. We intend to implement a set of decision-aid methodologies to support our members by leveraging vast practical and theoretical experiences in the field of applied decision making that one of our co-founders has. We want to adapt and develop new methodologies to support decentralized governance processes, not only for Cambiatus members but also for other DAOs. Tools include voting and doing weighted multi signatures based on roles. We will provide some starter voting strategies like simple majority and qualified majority (qualifying and weighting votes based on roles acquired).
@@ -428,14 +401,12 @@ As we progress, we wish to build more refined voting systems, exploring POAPs/NF
 
 We also wish to build a tool to allow admins to create "User Journey"', a role based path that walks users through how to participate more in their community, earn roles and grow together with their communities. User Journeys could also be used to promote learning paths inside a community, by setting a learning path that guarantees participants to have certain roles. For example, users that take all the decision making courses, publish their findings publicly and help new users to onboard could take the role of "Voter", effectively allowing them to vote on DAO decisions. 
 
-Additional Information
-
-How did you hear about the Grants Program? EOS Network Foundation Website / Medium / Twitter / Element / Announcement by another team / personal recommendation / etc.
+## Additional Information
 
 Luiz Hadad, our lead for community building, is an active member of the EOS community since its launch. He worked at EOS Rio leading community building from 2018 until 2019, participated in many EOS conferences and kept an eye on the development of the EOS ecosystem. Since the launch of ENF, we have been willing to participate more in the community. We participated in the Pomelo Grants season 3 and saw on twitter that the grants program was happening. Then Luiz asked Yves La Rose for some information/guidance on the process through telegram, and we got into this stage.
 
 
-Members that contributed financially to the project
+### Members that contributed financially to the project
 Some of our members also help Cambiatus financially by contributing to our Liquidity Pool, here are some of them:
 
 Satisfied Vagabonds LLC
@@ -446,9 +417,9 @@ Cambiatus team members and community team leaders
 
 Approximate total contribution from start to date: $350K USD
 
-Previous grants you may have applied for
+Previous grants you may have applied for:
 
-We got a $1M USD grant from Shuttleworth Foundation, executed from 2018-2021 and that actually served as Cambiatus Seed Funding. 
-
-We applied for a grant on Pomelo Season 3, being a top 10 project for the season. We also applied for grants in other ReFi initiatives, such as Celo and Future Quest.
+- We got a $1M USD grant from Shuttleworth Foundation, executed from 2018-2021 and that actually served as Cambiatus Seed Funding. 
+- We applied for a grant on Pomelo Season 3, being a top 10 project for the season.
+- We also applied for grants in other ReFi initiatives, such as Celo and Future Quest.
 
