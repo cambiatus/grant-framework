@@ -36,42 +36,110 @@ This is a followup-grant from a successful Pomelo Grant: https://pomelo.io/grant
 - [Wireframe in production](https://drive.google.com/file/d/1yr7H5RMlMqKqgawuBTvsnA9f_1otgQ90/view?usp=share_link)
 
 
+This is a grant that follow up on a work on a previous grant. For that reason, its important to outline our data models with some documentation that can be found [here](https://github.com/cambiatus/contracts/blob/master/community/community.hpp)
 
-Data models of the core functionality
+```cpp
+  /**
+   * Roles is a way to identify people's relation with their community.
+   * It can be used to allow people to be recognized by their role in the whole of the community, to give them awards or to help them to identify themselves.
+   * They can be customized with a color and can have a name
+   *
+   * Roles can also be atttached with permissions that gives them abilities within the community such as the ability to invite new people in, to sell goods and services and more
+   *
+   * The initial abilities that we offer are:
+   *  invite: invite new users `netlink`
+   *  claim: allow claiming actions `claimaction`
+   *  order: create new orders `transfersale`
+   *  verify: verify autenticity on claims `verifyclaim`
+   *  sell: sell items on the shop `createsale` `updatesale` .
+   *  award: awards an action `verifyaction` (`award`)
+   *
+   * All of those roles are used from within the contract to mediate the usage of some actions.
+   *
+   * Roles are scoped by community.
+   */
+  TABLE role
+  {
+    eosio::name name;
+    std::vector<std::string> permissions;
 
+    std::uint64_t primary_key() const { return name.value; }
 
+    EOSLIB_SERIALIZE(role, (name)(permissions));
+  };
+```
 
+```cpp
+enum permission
+{
+  invite,
+  claim,
+  order,
+  verify,
+  sell,
+  award,
+  transfer
+};
+```
 
-API specifications of the core functionality
+```cpp
+  TABLE member
+  {
+    eosio::name name;
+    eosio::name inviter;
+    std::string user_type;
+    std::vector<eosio::name> roles;
 
-Besides that we will provide helper functions to help verify if the user has the required role
+    std::uint64_t primary_key() const { return name.value; }
 
+    EOSLIB_SERIALIZE(member,
+                     (name)(inviter)(user_type)(roles));
+  };
+```
 
+**API specification from the contract**
 
-An overview of the technology stack to be used
+We will provide helper functions to help verify if the user has the required role:
+
+```cpp
+  /// @abi action
+  /// Upserts roles in a community
+  ACTION upsertrole(eosio::symbol community_id, eosio::name name, std::string color, std::vector<std::string> & permissions);
+
+  /// @abi action
+  /// Sets a number of roles for an user
+  ACTION assignroles(eosio::symbol community_id, eosio::name member, std::vector<eosio::name> & roles);
+  
+  // Convinience methods
+  bool is_member(eosio::symbol community_id, eosio::name user);
+  bool has_permission(eosio::symbol community_id, eosio::name user, permission e_permission);
+  std::string permission_to_string(permission e_permission);
+```
+
+### An overview of the technology stack to be used
 It's an on-chain functionality so everything will be handled locally with the libraries we will provide. We also will provide our Smart contract source.
 
 
-We will also provide reference for:
-Ingesting blockchain data using Elixir and Broadway
-Serving blockchain data using GraphQL
-Interacting with relevant smart contract action using Javascript and Elm
-Our architecture, can help other projects decide on their own path
+#### We will also provide reference for:
+- Ingesting blockchain data using Elixir and Broadway
+- Serving blockchain data using GraphQL
+- Interacting with relevant smart contract action using Javascript and Elm
+- Our architecture, can help other projects decide on their own path
 
-PoC/MVP or other relevant prior work or research on the topic
+### PoC/MVP or other relevant prior work or research on the topic
 Our current structure includes the following roles: members, validators and admins, which have been used live by our users (currently +9000 users) since 2018: 
 
-Members: buy, sell, claim
-Validator:  approve or reject claims (voting)
-Admin: Configure community settings, and perform admin only tasks: manage objectives, actions, enable features, publish internal communications, configure tokenomics and more.
+- Members: `buy`, `sell`, `claim`
+- Validator:  `approve` or `reject` claims (voting)
+- Admin: Configure community settings, and perform admin only tasks: manage objectives, actions, enable features, publish internal communications, configure tokenomics and more.
 
-What your project is not or will not provide or implement
+### What your project is not or will not provide or implement
 We already have the intent to extend this data structure for different horizons. But for now we will not provide:
-Integration with multi signatures,
-Onchain and Offchain propositions,
-Decision making tools,
-User journeys,
-Weighted voting for different roles.
+- Integration with multi signatures,
+- Onchain and Offchain propositions,
+- Decision making tools,
+- User journeys,
+- Weighted voting for different roles.
 
 All of the above will be addressed in future versions.
 
@@ -79,72 +147,70 @@ Our end goal is to allow communities to decide with different voting strategies 
 
 To achieve this we propose the following steps:
 
-Provide structure for adding context/metadata to an user participation in a community. Roles will provide this, allowing users to earn or receive roles based on their history / reputation, on and off chain. 
-Some of those achievements will provide them with permissions, effectively allowing them to "work their way" into more responsibilities and permissions on a community. This will be provided by permissions. This means certain eosio actions will only be processed by people of certain roles within the community that have the appropriate permission.
-After having this basic contextualization, we will create tools for decision making inside a community. This will allow users to vote and multisig with their votes and roles. 
-From here, we will have to define what our communities need the most. Some ideas are a more refined voting system with weighted voting based on roles, exploring external reputation systems like POAPs, creating User Journeys to allow communities to promote internal learning and capacitation.
+- Provide structure for adding context/metadata to an user participation in a community. Roles will provide this, allowing users to earn or receive roles based on their history / reputation, on and off chain. 
+- Some of those achievements will provide them with permissions, effectively allowing them to "work their way" into more responsibilities and permissions on a community. This will be provided by permissions. This means certain eosio actions will only be processed by people of certain roles within the community that have the appropriate permission.
+- After having this basic contextualization, we will create tools for decision making inside a community. This will allow users to vote and multisig with their votes and roles. 
+- From here, we will have to define what our communities need the most. Some ideas are a more refined voting system with weighted voting based on roles, exploring external reputation systems like POAPs, creating User Journeys to allow communities to promote internal learning and capacitation.
 
 For this grant we intend to start walking that path, building steps 1 and 2.
 
-Ecosystem Fit
-Help us locate your project in the EOSIO landscape and what problems it tries to solve by answering each of these questions:
+### Ecosystem Fit
 
-Where and how does your project fit into the ecosystem?
+- Where and how does your project fit into the ecosystem?
 We are a software that helps communities create their own tokens and have a set of DAO tooling for that. Our focus is to onboard users with no blockchain knowledge or familiarity to use it. Communities can create their own complementary currencies and use it to help them connect, trade and save their other fiat/crypto money for other interactions. 
 We are open source and a participant in the EOS ecosystem since 2019.
 We run our own EOSIO private network with the help of EOS Rio block producer as our tech partners.
 Long time learners and teachers of the ecosystem (our team facilitated 3 EOS hackathons and many meetups in Brazil since 2018).
 In 2022 we got the first financial support from the EOS Community via Pomelo, when we reached the top 10 projects with the roles and permissions feature, base work for what we are talking about on this grant. 
 
-Who is your target audience?
+- Who is your target audience?
 The whole EOSIO/ Antelope compatible ecosystem (Wax, Ultra, Telos, etc),
 Our 8 communities in production, its leadership teams and their 9k+ users from Costa Rica, Brazil and Ethiopia,
 Dapp developers trying to add a comprehensive permission tool to their smart contracts,
 DAOs facing the limitations of a simple holder whale taking important decisions,
 Users with little to no blockchain experience
 
-What need(s) does your project meet?
-Decentralization: using Roles & Permissions, community leaders will be able to assign roles and permissions to other people involved in community leadership and by doing so, taking the decision/task away from just one person.
-Decentralized governance: allowing decision-making to be inclusive and collaborative, in a scenario where people can exercise their voting power based on their history of living in the community, instead of having their voting power stipulated only by the number of tokens you own. New leaderships can emerge as time progresses. 
-Education: Expanding access to the community based on learning: as a user learns, commits and collaborates with the community, they earn more access. This also helps to avoid trolls or fake Sybyl accounts, as it takes time to be able to participate fully.
-Engagement: As the person learns, interacts and contributes to the growth of the community, they are recognized, gaining Roles & Permissions that reflect their good engagement within the community.
+- What need(s) does your project meet?
+  - **Decentralization:** using Roles & Permissions, community leaders will be able to assign roles and permissions to other people involved in community leadership and by doing so, taking the decision/task away from just one person.
+  - **Decentralized governance:** allowing decision-making to be inclusive and collaborative, in a scenario where people can exercise their voting power based on their history of living in the community, instead of having their voting power stipulated only by the number of tokens you own. New leaderships can emerge as time progresses. 
+  - **Education:** Expanding access to the community based on learning: as a user learns, commits and collaborates with the community, they earn more access. This also helps to avoid trolls or fake Sybyl accounts, as it takes time to be able to participate fully.
+  - **Engagement:** As the person learns, interacts and contributes to the growth of the community, they are recognized, gaining Roles & Permissions that reflect their good engagement within the community.
 
-Similar projects 
+### Similar projects 
 Hypha is a similar product within the EOSIO ecosystem. They're an organization-in-a-box solution and we believe they’re better suited for communities that already have a deeper blockchain knowledge and know what a DAO is, how to use a DAO toolkit, and most of their features are thought for advanced users. 
 
 Hypha looks like a high-end application, with many different features, that requires a broader / deeper knowledge to use. We’d love to see both projects coexisting, learning and collaborating in the EOS ecosystem. Since both projects are open source, it will be great to see how both projects unfold. Cambiatus focuses on ease of use, and being an entryway for many people, enabling them to further their interactions with the broader EOSIO community and projects. 
 
 From other blockchains and ecosystems we find another set of tools that may look similar:
-Aragon
-Colony
-DAOStack
-1HiveDAO
-DAOHaus
-Socialstack
-Closer.earth
+- Aragon
+- Colony
+- DAOStack
+- 1HiveDAO
+- DAOHaus
+- Socialstack
+- Closer.earth
 
 
-Team
+## Team
 
-Team members
-Co-founders: Karla Córdoba-Brenes, Ranulfo Paiva Sobrinho;
-Community Building Team: Luiz Hadad, Criscia Cesconetto, Luisa Calixto;
-Developers Team: Julien Lucca, Henrique Buss, Matheus Buss;
-UI/UX Team: Juliana Ramos, Rafa Chadud;
-Data Science: Helton Ramos.
+### Team members
+- Co-founders: Karla Córdoba-Brenes, Ranulfo Paiva Sobrinho;
+- Community Building Team: Luiz Hadad, Criscia Cesconetto, Luisa Calixto;
+- Developers Team: Julien Lucca, Henrique Buss, Matheus Buss;
+- UI/UX Team: Juliana Ramos, Rafa Chadud;
+- Data Science: Helton Ramos.
 
-Team Leaders: 
-Community Building Team Leader: Luiz Hadad;
-Developers Team Leader: Julien Lucca;
-UI/UX Team Leader: Juliana Ramos
+### Team Leaders: 
+- Community Building Team Leader: Luiz Hadad;
+- Developers Team Leader: Julien Lucca;
+- UI/UX Team Leader: Juliana Ramos
 
-
-Legal Structure
+### Legal Structure
 Registered Legal Entity: Cambiatus OPC
 Registered Address: PO Box 2510, Grand Cayman KY1-1104, Cayman Islands
 
 
-Team Experience
+### Team Experience
 Our team has been building on EOSIO for 4 years now. We've done our pilot in a community in Costa Rica. We've been part of every major announcement since before Block.one released version 1.0. Since then we've deployed and maintained our own private network, developed several features into our app, including smart contract, backend, infrastructure, wallet integrations, frontend and finally our own wallet inside our app.
 
 Although we are like projects like Hypha, Cambiatus is different because the initial focus is on social currencies and financial resiliency to foster planetary regeneration. Our partner communities are located in Latin America and Africa. We’ve had many learnings along this way, starting from simple things like choosing to develop a mobile-first webApp because many of our members didn’t have enough memory space in their smartphones to download an app, access to a PC/laptop or have a slow and unreliable internet connection. 
@@ -161,42 +227,42 @@ We believe Cambiatus is a tool that is more accessible for “normies”, especi
 
 Cambiatus is already the first step for many people entering the crypto ecosystem and discovering how to use social tokens and collaborate with DAOs. We already have partner communities doing this like Muda and Play4Change, empowering people from favelas in Brazil, Verdes in Costa Rica and Agelgil in Ethiopia.
 
-Karla: MSc Community Development, Cambiatus co-founder, Shuttleworth Foundation Alumni and first Latinamerican Grantee, Singularity University Alumni, Asoblockchain Costa Rica Board Member, TEDx Costa Rica speaker.  Past experience:  10+ years working in community development and environmental projects in Costa Rica, supporting local communities, facilitating development and organizational processes. 2+ years collaborating with Enlivening Edge Magazine as a team member, an holacratic organization focused on Next-Stage Organizations. 5+ years developing and implementing Cambiatus Methodology and co-design processes. Co-organized the first EOS Hackathon in Brazil. Currently supporting the strengthening of the Costa Rican blockchain ecosystem.  Speaker focused on Impact, Governance, and ReFi.  Full CV 
+- **Karla:** MSc Community Development, Cambiatus co-founder, Shuttleworth Foundation Alumni and first Latinamerican Grantee, Singularity University Alumni, Asoblockchain Costa Rica Board Member, TEDx Costa Rica speaker.  Past experience:  10+ years working in community development and environmental projects in Costa Rica, supporting local communities, facilitating development and organizational processes. 2+ years collaborating with Enlivening Edge Magazine as a team member, an holacratic organization focused on Next-Stage Organizations. 5+ years developing and implementing Cambiatus Methodology and co-design processes. Co-organized the first EOS Hackathon in Brazil. Currently supporting the strengthening of the Costa Rican blockchain ecosystem.  Speaker focused on Impact, Governance, and ReFi.  Full CV 
 
-Ranulfo: PhD in Economics, Post Doc in Crypto Assets applied to Conservation. Cambiatus co-founder and vagabond master Full CV 
+- **Ranulfo:** PhD in Economics, Post Doc in Crypto Assets applied to Conservation. Cambiatus co-founder and vagabond master Full CV 
 
-Lucca: Full stack software developer, collaborated on one of the first games on EOS, MonsterEOSRio, MonsterEOS a tamagotchi like platform. Working for 5 years with blockchain, mainly Ethereum and EOS. 3+ years working with mobile app development, 10+ years working with backend development. I have teached on 4 universities on free courses and have bootstrapped some communities, like Ethereum São Paulo (2k members) and Elixir User Group in São Paulo (1k members). Published two ERC20 tokens into mainnet with some use, did some auditing for PixEOS. Full CV.
+- **Lucca:** Full stack software developer, collaborated on one of the first games on EOS, MonsterEOSRio, MonsterEOS a tamagotchi like platform. Working for 5 years with blockchain, mainly Ethereum and EOS. 3+ years working with mobile app development, 10+ years working with backend development. I have teached on 4 universities on free courses and have bootstrapped some communities, like Ethereum São Paulo (2k members) and Elixir User Group in São Paulo (1k members). Published two ERC20 tokens into mainnet with some use, did some auditing for PixEOS. Full CV.
 
-Luiz Hadad : Former head of community @ EOS Rio, helped organize several hackathons, meetups and conferences in Brazil.  Currently is an advisor at Ethereum Brasil, helping organize Ethereum Rio and Ethereum São Paulo events this year. Speaks at the main crypto conferences in Brazil - was the opening speaker at Ethereum Rio and showcased the Cambiatus use case. Lead researcher for the Sherlock Communications Blockchain Report Latam. Member of the Founders Circle at ReFi DAO.
+- **Luiz Hadad:** Former head of community @ EOS Rio, helped organize several hackathons, meetups and conferences in Brazil.  Currently is an advisor at Ethereum Brasil, helping organize Ethereum Rio and Ethereum São Paulo events this year. Speaks at the main crypto conferences in Brazil - was the opening speaker at Ethereum Rio and showcased the Cambiatus use case. Lead researcher for the Sherlock Communications Blockchain Report Latam. Member of the Founders Circle at ReFi DAO.
 
-Team Org Repos
-https://github.com/cambiatus
-https://github.com/cambiatus/frontend
-https://github.com/cambiatus/contracts
-https://github.com/cambiatus/backend
-https://github.com/cambiatus/event-source
+### Team Org Repos
+- https://github.com/cambiatus
+- https://github.com/cambiatus/frontend
+- https://github.com/cambiatus/contracts
+- https://github.com/cambiatus/backend
+- https://github.com/cambiatus/event-source
 
-Please also provide the GitHub accounts of all team members. If they contain no activity, references to projects hosted elsewhere or live are also fine.
+### Dev Team Member Repos
+- https://github.com/lucca65 
+- https://github.com/henriquecbuss 
+- https://github.com/MatheusBuss
 
-Dev Team Member Repos
-https://github.com/lucca65 
-https://github.com/henriquecbuss 
-https://github.com/MatheusBuss
+### Related work from our team
+- https://github.com/henriquecbuss/elm-eos
+- https://github.com/MonsterEOS/monstereos
+- https://github.com/lucca65/ex_coin
+- https://github.com/lucca65/thedapp
 
-https://github.com/henriquecbuss/elm-eos
-https://github.com/MonsterEOS/monstereos
-https://github.com/lucca65/ex_coin
-https://github.com/lucca65/thedapp
-
-Team LinkedIn Profiles (if available)
-https://www.linkedin.com/in/luiz-eduardo-abreu-hadad-9b493033/ 
-https://www.linkedin.com/in/julienlucca/ 
-https://www.linkedin.com/in/henrique-buss-5b85801b4/ 
-https://www.linkedin.com/in/matheus-da-cunha-buss-0236b9164/
-https://www.linkedin.com/in/julianacristineramos/
+### Team LinkedIn Profiles (if available)
+- https://www.linkedin.com/in/luiz-eduardo-abreu-hadad-9b493033/ 
+- https://www.linkedin.com/in/julienlucca/ 
+- https://www.linkedin.com/in/henrique-buss-5b85801b4/ 
+- https://www.linkedin.com/in/matheus-da-cunha-buss-0236b9164/
+- https://www.linkedin.com/in/julianacristineramos/
 
 
-Development Status 
+##Development Status 
+
 Development has already started with smart contract implementation, which can be seen here: https://github.com/cambiatus/contracts or with a little more depth in the PR: https://github.com/cambiatus/contracts/pull/33. 
 
 Basic planning for the next steps can be seen here: https://github.com/orgs/cambiatus/discussions/669
