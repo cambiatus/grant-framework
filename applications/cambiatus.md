@@ -117,14 +117,14 @@ We will provide helper functions to help verify if the user has the required rol
 ```
 
 ### An overview of the technology stack to be used
-It's an on-chain functionality so everything will be handled locally with the libraries we will provide. We also will provide our Smart contract source.
+It's an on-chain functionality so everything will be handled locally with the libraries we will provide. We also will provide our [smart contract source code](https://github.com/cambiatus/contracts/blob/master/community/community.hpp).
 
 
 #### We will also provide reference for:
-- Ingesting blockchain data using Elixir and Broadway
-- Serving blockchain data using GraphQL
-- Interacting with relevant smart contract action using Javascript and Elm
-- Our architecture, can help other projects decide on their own path
+- Ingesting blockchain data using [Elixir](https://elixir-lang.org/) and [Broadway](https://elixir-broadway.org)
+- Serving blockchain data using [GraphQL](https://graphql.org)
+- Interacting with relevant smart contract action using Javascript and [Elm](https://elm-lang.org)
+- [Our architecture](https://www.figma.com/file/i4Azmx3APcQulJ1zmHNLIV/Cambiatus-Architecture?node-id=0%3A1), which can help other projects decide on their own path
 
 ### PoC/MVP or other relevant prior work or research on the topic
 Our current structure includes the following roles: members, validators and admins, which have been used live by our users (currently +9000 users) since 2018: 
@@ -150,7 +150,7 @@ To achieve this we propose the following steps:
 - Provide structure for adding context/metadata to an user participation in a community. Roles will provide this, allowing users to earn or receive roles based on their history / reputation, on and off chain. 
 - Some of those achievements will provide them with permissions, effectively allowing them to "work their way" into more responsibilities and permissions on a community. This will be provided by permissions. This means certain eosio actions will only be processed by people of certain roles within the community that have the appropriate permission.
 - After having this basic contextualization, we will create tools for decision making inside a community. This will allow users to vote and multisig with their votes and roles. 
-- From here, we will have to define what our communities need the most. Some ideas are a more refined voting system with weighted voting based on roles, exploring external reputation systems like POAPs, creating User Journeys to allow communities to promote internal learning and capacitation.
+- From here, we will have to define what our communities need the most. Some ideas are a more refined voting system with weighted voting based on roles, exploring external reputation systems like [POAPs](https://poap.xyz), creating User Journeys to allow communities to promote internal learning and capacitation.
 
 For this grant we intend to start walking that path, building steps 1 and 2.
 
@@ -219,19 +219,19 @@ We also have translations to portuguese, spanish, catalan, ethiopian and english
 
 Our biggest differential is that all our communities are provided with assisted tokenomics co-design sessions - we don’t assume they know how to create a currency or develop their own tokenomics. We added a human layer to enable our partner communities to use our tools and be able to promote change in their economic context. It's a constructivist method, allowing co-creation, co-organization and aligning objectives under a group.
 
-Our methodology starts with a learning path that helps community leaders understand what is money, how money is created, what are social currencies, examples, and then we start explaining about crypto, blockchain, DAOs, collaborative businesses and evolved Coops using blockchain technologies.
+[Our methodology starts with a learning path](https://www.cambiatus.com/learningpath) that helps community leaders understand what is money, how money is created, what are social currencies, examples, and then we start explaining about crypto, blockchain, DAOs, collaborative businesses and evolved Coops using blockchain technologies.
 
 Only after this we start the co-design sessions, and we take the educational approach very seriously, because at the end of the day, it’s a mindset change.
 
 We believe Cambiatus is a tool that is more accessible for “normies”, especially the ones that don’t have much understanding about crypto or communities that don’t speak fluent english (the language barrier is HUGE in Latam). One example is that we’re doing a co-design process with the Paiter Surui Indigenous community, aiming to create the first blockchain-based social currency in their tribe. How would they be able to use Hypha? We believe Cambiatus is easier to use than Hypha, with the most essential tools, and still helps communities create their own organizations to exchange value and coordinate themselves towards financial resiliency. 
 
-Cambiatus is already the first step for many people entering the crypto ecosystem and discovering how to use social tokens and collaborate with DAOs. We already have partner communities doing this like Muda and Play4Change, empowering people from favelas in Brazil, Verdes in Costa Rica and Agelgil in Ethiopia.
+Cambiatus is already the first step for many people entering the crypto ecosystem and discovering how to use social tokens and collaborate with DAOs. We already have [partner communities](https://www.cambiatus.com/communities) doing this like [Muda](https://www.instagram.com/mudaoutraseconomias/) and [Play4Change](https://www.play4change.io/), empowering people from favelas in Brazil, [Verdes](https://verdesmonteverde.com/) in Costa Rica and [Agelgil](https://www.cambiatus.com/agelgil) in Ethiopia.
 
-- **Karla:** MSc Community Development, Cambiatus co-founder, Shuttleworth Foundation Alumni and first Latinamerican Grantee, Singularity University Alumni, Asoblockchain Costa Rica Board Member, TEDx Costa Rica speaker.  Past experience:  10+ years working in community development and environmental projects in Costa Rica, supporting local communities, facilitating development and organizational processes. 2+ years collaborating with Enlivening Edge Magazine as a team member, an holacratic organization focused on Next-Stage Organizations. 5+ years developing and implementing Cambiatus Methodology and co-design processes. Co-organized the first EOS Hackathon in Brazil. Currently supporting the strengthening of the Costa Rican blockchain ecosystem.  Speaker focused on Impact, Governance, and ReFi.  Full CV 
+- **Karla:** MSc Community Development, Cambiatus co-founder, Shuttleworth Foundation Alumni and first Latinamerican Grantee, Singularity University Alumni, Asoblockchain Costa Rica Board Member, TEDx Costa Rica speaker.  Past experience:  10+ years working in community development and environmental projects in Costa Rica, supporting local communities, facilitating development and organizational processes. 2+ years collaborating with Enlivening Edge Magazine as a team member, an holacratic organization focused on Next-Stage Organizations. 5+ years developing and implementing Cambiatus Methodology and co-design processes. Co-organized the first EOS Hackathon in Brazil. Currently supporting the strengthening of the Costa Rican blockchain ecosystem.  Speaker focused on Impact, Governance, and ReFi. [Full CV](https://docs.google.com/document/d/1ayR6cLJppXk-9YHpFVSyw_EQ7zDvtT69JPVuLgH-PJI/edit?usp=sharing) 
 
-- **Ranulfo:** PhD in Economics, Post Doc in Crypto Assets applied to Conservation. Cambiatus co-founder and vagabond master Full CV 
+- **Ranulfo:** PhD in Economics, Post Doc in Crypto Assets applied to Conservation. Cambiatus co-founder and vagabond master [Full CV](https://docs.google.com/document/d/1xnL1sOqLcduWJUTyiSFuu-l3ZwI_eOxfs4ELnwjCFmo/edit?usp=sharing) 
 
-- **Lucca:** Full stack software developer, collaborated on one of the first games on EOS, MonsterEOSRio, MonsterEOS a tamagotchi like platform. Working for 5 years with blockchain, mainly Ethereum and EOS. 3+ years working with mobile app development, 10+ years working with backend development. I have teached on 4 universities on free courses and have bootstrapped some communities, like Ethereum São Paulo (2k members) and Elixir User Group in São Paulo (1k members). Published two ERC20 tokens into mainnet with some use, did some auditing for PixEOS. Full CV.
+- **Lucca:** Full stack software developer, collaborated on one of the first games on EOS, [MonsterEOS](https://github.com/MonsterEOS/monstereos) a tamagotchi like platform. Working for 5 years with blockchain, mainly Ethereum and EOS. 3+ years working with mobile app development, 10+ years working with backend development. I have teached on 4 universities on free courses and participated on boostraping dev communities, like [Ethereum São Paulo](https://www.meetup.com/pt-BR/ethsaopaulo/) (2k members) and [Elixir User Group in São Paulo](https://www.meetup.com/pt-BR/elug_sp/) (1k members). Published two ERC20 tokens into mainnet with some use and also helped auditing for [PixEOS](https://gallery.pixeos.art/) smart contracts. Full CV.
 
 - **Luiz Hadad:** Former head of community @ EOS Rio, helped organize several hackathons, meetups and conferences in Brazil.  Currently is an advisor at Ethereum Brasil, helping organize Ethereum Rio and Ethereum São Paulo events this year. Speaks at the main crypto conferences in Brazil - was the opening speaker at Ethereum Rio and showcased the Cambiatus use case. Lead researcher for the Sherlock Communications Blockchain Report Latam. Member of the Founders Circle at ReFi DAO.
 
@@ -254,31 +254,36 @@ Cambiatus is already the first step for many people entering the crypto ecosyste
 - https://github.com/lucca65/thedapp
 
 ### Team LinkedIn Profiles (if available)
+- https://www.linkedin.com/in/muguika/
+- https://www.linkedin.com/in/ranulfosobrinho/
 - https://www.linkedin.com/in/luiz-eduardo-abreu-hadad-9b493033/ 
 - https://www.linkedin.com/in/julienlucca/ 
 - https://www.linkedin.com/in/henrique-buss-5b85801b4/ 
 - https://www.linkedin.com/in/matheus-da-cunha-buss-0236b9164/
 - https://www.linkedin.com/in/julianacristineramos/
+- https://www.linkedin.com/in/lcalixxto/
+- https://www.linkedin.com/in/rafaela-chadud/
+- https://www.linkedin.com/in/heltonramos/
 
 
-##Development Status 
+## Development Status 
 
 Development has already started with smart contract implementation, which can be seen here: https://github.com/cambiatus/contracts or with a little more depth in the PR: https://github.com/cambiatus/contracts/pull/33. 
 
 Basic planning for the next steps can be seen here: https://github.com/orgs/cambiatus/discussions/669
 
-This feature will require interactions on 
-Smart Contracts, which is already done;
-UX/UI, which is on progress;
-Backend ingestion, which has not started yet
-API, which has not started yet
-Frontend, which has not started yet
+This feature will require interactions on: 
+- Smart Contracts, which is already done;
+- UX/UI, which is on progress;
+- Backend ingestion, which has not started yet
+- API, which has not started yet
+- Frontend, which has not started yet
 
 Some resources:
-Figma reference with some discussion (in brazilian portuguese) 
-Slides for the presentation of Role and Permissions
+- Figma reference with some discussion (in brazilian portuguese) 
+- Slides for the presentation of Role and Permissions
 
-Development Roadmap
+## Development Roadmap
 
 
 Milestone 1 — Provide structural changes for adding context / metadata to an user participation in a community, mostly backend work with no visible changes
