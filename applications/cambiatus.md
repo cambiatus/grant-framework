@@ -349,9 +349,13 @@ Depending on our findings, plan out a centralized alternative. We can use multis
   - `claimaction` (when an user initiates a request for claiming an action)
   - `verifyclaim` (when other users vote to approve/reject a claim)
   - `reward` (when admins reward users a certain amount of tokens)
+  
 with the following **Effects**:
+
   - `assignrole`
+  
 under available **Conditions**:
+
   - Count: a certain number of times a trigger must be activated
   - Time scope: a limit date like "5 days, 1 month" and so on
   - Existing roles: a filter that makes sure the affected users have necessary roles
