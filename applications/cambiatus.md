@@ -343,7 +343,7 @@ This Milestone is partially completed and can be check on some Pull Requests:
 - **Research:** Study tools like Chainlink and LiquidApps to check on how we enable oracle-like structure and decentralized automation systems. 
 Depending on our findings, plan out a centralized alternative. We can use multisigs to initiate automatic transactions on communities, requiring admins to approve them.
 - **Contract:** Actions to authorize Chainlink (or LiquidApps) to our communities to setup automation.
-- **Backend:** No further work will be required if we manage to do this with a solution similar to Chainlink. If not, we will need to develop one similar centralized. It must allow for **triggers** based on our contract ACTIONs:
+- **Backend:** No further work will be required if we manage to do this with a solution similar to Chainlink. If not, we will need to develop a similar, centralized one. It must allow for **triggers** based on our contract ACTIONs:
   - `upsertactions` (when actions are changed in a community)
   - `upsertobjectives` (when objectives are changed in a community)
   - `claimaction` (when an user initiates a request for claiming an action)
