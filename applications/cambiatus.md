@@ -223,7 +223,7 @@ Our biggest differential is that all our communities are provided with assisted 
 
 Only after this we start the co-design sessions, and we take the educational approach very seriously, because at the end of the day, it’s a mindset change.
 
-We believe Cambiatus is a tool that is more accessible for “normies”, especially the ones that don’t have much understanding about crypto or communities that don’t speak fluent english (the language barrier is HUGE in Latam). One example is that we’re doing a co-design process with the Paiter Surui Indigenous community, aiming to create the first blockchain-based social currency in their tribe. How would they be able to use Hypha? We believe Cambiatus is easier to use than Hypha, with the most essential tools, and still helps communities create their own organizations to exchange value and coordinate themselves towards financial resiliency. 
+We believe Cambiatus is a tool that is more accessible for “normies”, especially the ones that don’t have much understanding about crypto or communities that don’t speak fluent english (the language barrier is HUGE in Latam). One example is that we’re doing a co-design process with the Paiter Surui Indigenous community, aiming to create the first blockchain-based social currency in their tribe. How would they be able to use Hypha? We believe Cambiatus is easier to use than Hypha, with the most essential tools, and still helps communities create their own organizations to exchange value and coordinate themselves towards financial resiliency.
 
 Cambiatus is already the first step for many people entering the crypto ecosystem and discovering how to use social tokens and collaborate with DAOs. We already have [partner communities](https://www.cambiatus.com/communities) doing this like [Muda](https://www.instagram.com/mudaoutraseconomias/) and [Play4Change](https://www.play4change.io/), empowering people from favelas in Brazil, [Verdes](https://verdesmonteverde.com/) in Costa Rica and [Agelgil](https://www.cambiatus.com/agelgil) in Ethiopia.
 
@@ -231,9 +231,9 @@ Cambiatus is already the first step for many people entering the crypto ecosyste
 
 - **Ranulfo:** PhD in Economics, Post Doc in Crypto Assets applied to Conservation. Cambiatus co-founder and vagabond master [Full CV](https://docs.google.com/document/d/1xnL1sOqLcduWJUTyiSFuu-l3ZwI_eOxfs4ELnwjCFmo/edit?usp=sharing) 
 
-- **Lucca:** Full stack software developer, collaborated on one of the first games on EOS, [MonsterEOS](https://github.com/MonsterEOS/monstereos) a tamagotchi like platform. Working for 5 years with blockchain, mainly Ethereum and EOS. 3+ years working with mobile app development, 10+ years working with backend development. I have teached on 4 universities on free courses and participated on boostraping dev communities, like [Ethereum São Paulo](https://www.meetup.com/pt-BR/ethsaopaulo/) (2k members) and [Elixir User Group in São Paulo](https://www.meetup.com/pt-BR/elug_sp/) (1k members). Published two ERC20 tokens into mainnet with some use and also helped auditing for [PixEOS](https://gallery.pixeos.art/) smart contracts. Full CV.
+- **Lucca:** Full stack software developer, collaborated on one of the first games on EOS, [MonsterEOS](https://github.com/MonsterEOS/monstereos) a tamagotchi like platform. Working for 5 years with blockchain, mainly Ethereum and EOS. 3+ years working with mobile app development, 10+ years working with backend development. I have teached on 4 universities on free courses and participated on boostraping dev communities, like [Ethereum São Paulo](https://www.meetup.com/pt-BR/ethsaopaulo/) (2k members) and [Elixir User Group in São Paulo](https://www.meetup.com/pt-BR/elug_sp/) (1k members). Published two ERC20 tokens into mainnet with some use and also helped auditing for [PixEOS](https://gallery.pixeos.art/) smart contracts
 
-- **Luiz Hadad:** Former head of community @ EOS Rio, helped organize several hackathons, meetups and conferences in Brazil.  Currently is an advisor at Ethereum Brasil, helping organize Ethereum Rio and Ethereum São Paulo events this year. Speaks at the main crypto conferences in Brazil - was the opening speaker at Ethereum Rio and showcased the Cambiatus use case. Lead researcher for the Sherlock Communications Blockchain Report Latam. Member of the Founders Circle at ReFi DAO.
+- **Luiz Hadad:** Former head of community @ EOS Rio, helped organize several hackathons, meetups and conferences in Brazil.  Currently is an advisor at Ethereum Brasil, helping organize Ethereum Rio and Ethereum São Paulo events this year. Speaks at the main crypto conferences in Brazil - was the opening speaker at Ethereum Rio and showcased the Cambiatus use case. Lead researcher for the Sherlock Communications Blockchain Report Latam. Member of the Founders Circle at ReFi DAO
 
 ### Team Org Repos
 - https://github.com/cambiatus
@@ -413,11 +413,11 @@ Luiz Hadad, our lead for community building, is an active member of the EOS comm
 ### Members that contributed financially to the project
 Some of our members also help Cambiatus financially by contributing to our Liquidity Pool, here are some of them:
 
-Satisfied Vagabonds LLC
-Helena Stewart: MUDA leader and impact investor
-Karla Córdoba-Brenes & Ranulfo Paiva Sobrinho: Cambiatus co-founders.
-Shuttleworth Foundation
-Cambiatus team members and community team leaders
+- [Satisfied Vagabonds LLC](https://www.satisfiedvagabonds.com)
+- Helena Stewart: MUDA leader and impact investor
+- Karla Córdoba-Brenes & Ranulfo Paiva Sobrinho: Cambiatus co-founders.
+- [Shuttleworth Foundation](https://shuttleworthfoundation.org)
+- Cambiatus team members and community team leaders
 
 Approximate total contribution from start to date: $350K USD
 
