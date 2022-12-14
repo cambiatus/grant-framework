@@ -36,7 +36,7 @@ This is a followup-grant from a successful Pomelo Grant: https://pomelo.io/grant
 - [Wireframe in production](https://drive.google.com/file/d/1yr7H5RMlMqKqgawuBTvsnA9f_1otgQ90/view?usp=share_link)
 
 
-This is a grant that follow up on a work on a previous grant. For that reason, its important to outline our data models with some documentation that can be found [here](https://github.com/cambiatus/contracts/blob/master/community/community.hpp)
+This grant builds on top of another successful [grant](https://pomelo.io/grants/cambiatus) we worked on. Because of that, we already have some data models and documentation, which can be found [here](https://github.com/cambiatus/contracts/blob/master/community/community.hpp) and in the following code snippets:
 
 ```cpp
   /**
@@ -107,7 +107,7 @@ We will provide helper functions to help verify if the user has the required rol
   ACTION upsertrole(eosio::symbol community_id, eosio::name name, std::string color, std::vector<std::string> & permissions);
 
   /// @abi action
-  /// Sets a number of roles for an user
+  /// Sets a number of roles for a user
   ACTION assignroles(eosio::symbol community_id, eosio::name member, std::vector<eosio::name> & roles);
   
   // Convinience methods
@@ -127,14 +127,14 @@ It's an on-chain functionality so everything will be handled locally with the li
 - [Our architecture](https://www.figma.com/file/i4Azmx3APcQulJ1zmHNLIV/Cambiatus-Architecture?node-id=0%3A1), which can help other projects decide on their own path
 
 ### PoC/MVP or other relevant prior work or research on the topic
-Our current structure includes the following roles: members, validators and admins, which have been used live by our users (currently +9000 users) since 2018: 
+Our current structure includes the following roles: members, validators and admins. These roles are being used by our over 9000 users since 2018:
 
 - Members: `buy`, `sell`, `claim`
 - Validator:  `approve` or `reject` claims (voting)
 - Admin: Configure community settings, and perform admin only tasks: manage objectives, actions, enable features, publish internal communications, configure tokenomics and more.
 
 ### What your project is not or will not provide or implement
-We already have the intent to extend this data structure for different horizons. But for now we will not provide:
+We already have the intent to extend this data structure for different horizons. But for now we will *not* provide:
 - Integration with multi signatures,
 - Onchain and Offchain propositions,
 - Decision making tools,
@@ -147,32 +147,36 @@ Our end goal is to allow communities to decide with different voting strategies 
 
 To achieve this we propose the following steps:
 
-- Provide structure for adding context/metadata to an user participation in a community. Roles will provide this, allowing users to earn or receive roles based on their history / reputation, on and off chain. 
-- Some of those achievements will provide them with permissions, effectively allowing them to "work their way" into more responsibilities and permissions on a community. This will be provided by permissions. This means certain eosio actions will only be processed by people of certain roles within the community that have the appropriate permission.
-- After having this basic contextualization, we will create tools for decision making inside a community. This will allow users to vote and multisig with their votes and roles. 
-- From here, we will have to define what our communities need the most. Some ideas are a more refined voting system with weighted voting based on roles, exploring external reputation systems like [POAPs](https://poap.xyz), creating User Journeys to allow communities to promote internal learning and capacitation.
+1. Provide structure for adding context/metadata to a user participation in a community. Roles will provide this, allowing users to earn or receive roles based on their history / reputation, on and off chain. 
+2. Some of those achievements will provide them with permissions, effectively allowing them to "work their way" into more responsibilities and permissions on a community. This will be provided by permissions. This means certain eosio actions will only be processed by people of certain roles within the community that have the appropriate permission.
+3. After having this basic contextualization, we will create tools for decision making inside a community. This will allow users to vote and multisig with their votes and roles. 
+4. From here, we will have to define what our communities need the most. Some ideas are a more refined voting system with weighted voting based on roles, exploring external reputation systems like [POAPs](https://poap.xyz), creating User Journeys to allow communities to promote internal learning and capacitation.
 
 For this grant we intend to start walking that path, building steps 1 and 2.
 
 ### Ecosystem Fit
 
 - Where and how does your project fit into the ecosystem?
-We are a software that helps communities create their own tokens and have a set of DAO tooling for that. Our focus is to onboard users with no blockchain knowledge or familiarity to use it. Communities can create their own complementary currencies and use it to help them connect, trade and save their other fiat/crypto money for other interactions. 
-We are open source and a participant in the EOS ecosystem since 2019.
-We run our own EOSIO private network with the help of EOS Rio block producer as our tech partners.
-Long time learners and teachers of the ecosystem (our team facilitated 3 EOS hackathons and many meetups in Brazil since 2018).
-In 2022 we got the first financial support from the EOS Community via Pomelo, when we reached the top 10 projects with the roles and permissions feature, base work for what we are talking about on this grant. 
+    - We develop a software that helps communities create their own tokens and have a set of DAO tooling for that. Our focus is to onboard users with no blockchain knowledge or familiarity to use it. Communities can create their own complementary currencies and use it to help them connect, trade and save their other fiat/crypto money for other interactions. 
+    - We are open source and a participant in the EOS ecosystem since 2019.
+    - We run our own EOSIO private network with the help of EOS Rio block producer as our tech partners.
+    - People from our team are long time learners and teachers of the ecosystem (our team facilitated 3 EOS hackathons and many meetups in Brazil since 2018).
+    - In 2022 we got the first financial support from the EOS Community via Pomelo, when we reached the top 10 projects with the roles and permissions feature, base work for what we are talking about on this grant. 
+
+<br/>
 
 - Who is your target audience?
-The whole EOSIO/ Antelope compatible ecosystem (Wax, Ultra, Telos, etc),
-Our 8 communities in production, its leadership teams and their 9k+ users from Costa Rica, Brazil and Ethiopia,
-Dapp developers trying to add a comprehensive permission tool to their smart contracts,
-DAOs facing the limitations of a simple holder whale taking important decisions,
-Users with little to no blockchain experience
+    - The whole EOSIO/ Antelope compatible ecosystem (Wax, Ultra, Telos, etc),
+    - Our 8 communities in production, its leadership teams and their 9k+ users from Costa Rica, Brazil and Ethiopia,
+    - Dapp developers trying to add a comprehensive permission tool to their smart contracts,
+    - DAOs facing the limitations of a simple holder whale taking important decisions,
+    - Users with little to no blockchain experience
+
+<br/>
 
 - What need(s) does your project meet?
   - **Decentralization:** using Roles & Permissions, community leaders will be able to assign roles and permissions to other people involved in community leadership and by doing so, taking the decision/task away from just one person.
-  - **Decentralized governance:** allowing decision-making to be inclusive and collaborative, in a scenario where people can exercise their voting power based on their history of living in the community, instead of having their voting power stipulated only by the number of tokens you own. New leaderships can emerge as time progresses. 
+  - **Decentralized governance:** allowing decision-making to be inclusive and collaborative, facilitating a scenario in which people can exercise their voting power based on their history of living within the community, instead of having their voting power stipulated only by the number of tokens you own. New leaderships can emerge as time progresses. 
   - **Education:** Expanding access to the community based on learning: as a user learns, commits and collaborates with the community, they earn more access. This also helps to avoid trolls or fake Sybyl accounts, as it takes time to be able to participate fully.
   - **Engagement:** As the person learns, interacts and contributes to the growth of the community, they are recognized, gaining Roles & Permissions that reflect their good engagement within the community.
 
@@ -211,13 +215,13 @@ Registered Address: PO Box 2510, Grand Cayman KY1-1104, Cayman Islands
 
 
 ### Team Experience
-Our team has been building on EOSIO for 4 years now. We've done our pilot in a community in Costa Rica. We've been part of every major announcement since before Block.one released version 1.0. Since then we've deployed and maintained our own private network, developed several features into our app, including smart contract, backend, infrastructure, wallet integrations, frontend and finally our own wallet inside our app.
+Our team has been building on EOSIO for 4 years now. We've done our pilot in a community in Costa Rica. We've been part of every major announcement since before Block.one released version 1.0. Since then we've deployed and maintained our own private network, developed several features into our app, including [smart contract](https://github.com/cambiatus/contracts), [backend](https://github.com/cambiatus/backend), [infrastructure](https://github.com/cambiatus/backend#nginx-setup), wallet integrations, [frontend](https://github.com/cambiatus/frontend) and finally our own wallet inside our app.
 
-Although we are like projects like Hypha, Cambiatus is different because the initial focus is on social currencies and financial resiliency to foster planetary regeneration. Our partner communities are located in Latin America and Africa. We’ve had many learnings along this way, starting from simple things like choosing to develop a mobile-first webApp because many of our members didn’t have enough memory space in their smartphones to download an app, access to a PC/laptop or have a slow and unreliable internet connection. 
+Although we admire and like projects like Hypha, Cambiatus is different because our main focus is on social currencies and financial resiliency to foster planetary regeneration. This is shown through our actions, such as choosing to develop a mobile-first webApp because many of our members don’t have enough memory space in their smartphones to download an app, others don't have access to a PC/laptop and others yet have a slow and unreliable internet connection. These actions are reflections of our goals and learnings with our partner communities which are located in Latin America and Africa.
 
-We also have translations to portuguese, spanish, catalan, ethiopian and english. Our educational content is in english, translated to portuguese and spanish - and we have community support in those three languages. Being pluricultural and language inclusive to our communities is a must.
+We also have translations to portuguese, spanish, catalan, amharic and english. Our educational content is in english, translated to portuguese and spanish - and we have community support in those three languages. Being pluricultural and language inclusive to our communities is a must.
 
-Our biggest differential is that all our communities are provided with assisted tokenomics co-design sessions - we don’t assume they know how to create a currency or develop their own tokenomics. We added a human layer to enable our partner communities to use our tools and be able to promote change in their economic context. It's a constructivist method, allowing co-creation, co-organization and aligning objectives under a group.
+Our biggest differential to our communities is that they're all provided with assisted tokenomics co-design sessions - we don’t assume they know how to create a currency or develop their own tokenomics. We added a human layer to enable our partner communities to use our tools and be able to promote change in their economic context. It's a constructivist method, allowing co-creation, co-organization and aligning objectives under a group.
 
 [Our methodology starts with a learning path](https://www.cambiatus.com/learningpath) that helps community leaders understand what is money, how money is created, what are social currencies, examples, and then we start explaining about crypto, blockchain, DAOs, collaborative businesses and evolved Coops using blockchain technologies.
 
@@ -291,18 +295,20 @@ Some resources:
 ## Development Roadmap
 
 
-### Milestone 1 — Provide structural changes for adding context / metadata to an user participation in a community, mostly backend work with no visible changes
+### Milestone 1 — Provide structural changes for adding context / metadata to a user participation in a community, mostly backend work with no visible changes
 - **Estimated duration:** 1 month
 - **FTE:** 6
 - **Costs:** 10,000.00 USD
 - **License:** GNU Affero General Public License v3.0
 - **Documentation:** All documentation on this milestone is delivered by code and release notes, as its intended to be consumed by code
-- **Testing Guide:** Core functions will be fully covered by unit tests to ensure functionality and robustness. Related repos will contain testing instructions. Test setup and instructions are already present in our https://github.com/cambiatus/backend, only new tests will be added. Existing instructions will cover them
-- **Application interface to EOSIO:** We will create an integration layer, consisting of a blockchain sync solution like demux implementation or similar to digest blockchain data into our own centralized database, for caching. 
+- **Testing Guide:** Core functions will be fully covered by unit tests to ensure functionality and robustness. Related repos will contain testing instructions. Test setup and instructions are already present in our [backend repository](https://github.com/cambiatus/backend), only new tests will be added. Existing instructions will cover them
+- **Application interface to EOSIO:** We will create an integration layer, consisting of a blockchain sync solution like demux implementation or similar to digest blockchain data into our own centralized database, for caching
 - **Front-End / User Interface:** Minor adjustments to comply with the new data structures, but no new screens or other visible changes
-- **Caching layer	/ API Interface:** Minor adjustments to comply with new data structures; Provide new entities like role, permission;Updating existing entities like network and user. 
+- **Caching layer	/ API Interface:** Minor adjustments to comply with new data structures:
+    - Provide new entities like role and permission
+    - Updating existing entities like network and user
 
-This Milestone is partially completed and can be check on some Pull Requests:
+This Milestone is partially completed and can be checked on some Pull Requests:
 - https://github.com/cambiatus/contracts/pull/33
 - https://github.com/cambiatus/contracts/pull/40
 - https://github.com/cambiatus/backend/pull/200
@@ -320,7 +326,7 @@ This Milestone is partially completed and can be check on some Pull Requests:
   -  Assign Roles
   -  Display roles in profile and related pages
   -  Display community roles
-  -  Designs are partially done and can be seen here
+  -  Designs are partially done and can be seen [here]((https://www.figma.com/file/IYaSqUD58quAZMIhqdi7WA/Roles-%26-Permissions?node-id=508%3A3181&t=DYGyoE0p7cT4WYFW-0))
 - **Backend:** Based on the screens, develop GraphQL APIs to better serve those screens. Including adding both database and GraphQL entities like `user_roles`, `community_roles`, permissions enums
 - **Frontend:** 
   - Add hover for role public view
@@ -333,9 +339,9 @@ This Milestone is partially completed and can be check on some Pull Requests:
 - **Estimated duration:** 2 months
 - **FTE:** 6
 - **Costs:** 10,000.00 USD
-- **Testing Guide:** Use of navigable prototypes to carry out concept and usability tests with key people (administrators and other members of the community) in order to raise and define hypotheses and mitigate possible functionality errors. We will make adjustments to interfaces based on test results.
-- **Documentation and Testing Guide:** We will use our test environment to test the main functionalities and the proposed design. We will provide both inline documentation of the code and a basic tutorial that explains how a user can use it within their communities. We will also publish our platform tutorials here: https://medium.com/cambiatus-tutorials
-- **Feedback gathering and tutorials:** We will do live meetings and workshops to showcase basic usage and how existing communities could use this. Meetings will be in English, Spanish and Portuguese, languages that our communities use. With feedback we can prioritize next features and adjust as needed
+- **Testing Guide:** Use of navigable prototypes to carry out concept and usability tests with key people (administrators and other members of the community) in order to raise and define hypothesis and mitigate possible functionality errors. We will make adjustments to interfaces based on test results
+- **Documentation and Testing Guide:** We will use our test environment to test the main functionalities and the proposed design. We will provide both inline documentation of the code and a basic tutorial that explains how a user can use it within their communities. We will also publish our platform tutorials [here](https://medium.com/cambiatus-tutorials)
+- **Feedback gathering and tutorials:** We will do live meetings and workshops to showcase basic usage and how existing communities could use this. Meetings will be in english, spanish and portuguese, languages that our communities use. With feedback we can prioritize upcoming features and adjust as needed
 - **Design:** Prepare for the next milestone: 
   - Basic interface for creating common automations with triggers for number of claims, or specific claims, or selling an item on the shop
   - Screen to display automations enabled
@@ -346,24 +352,20 @@ This Milestone is partially completed and can be check on some Pull Requests:
 - **FTE:** 6
 - **Costs:** 10,000.00 USD
 - **Research:** Study tools like Chainlink and LiquidApps to check on how we enable oracle-like structure and decentralized automation systems. 
-Depending on our findings, plan out a centralized alternative. We can use multisigs to initiate automatic transactions on communities, requiring admins to approve them.
-- **Contract:** Actions to authorize Chainlink (or LiquidApps) to our communities to setup automation.
+Depending on our findings, plan out a centralized alternative. We can use multisigs to initiate automatic transactions on communities, requiring admins to approve them
+- **Contract:** Actions to authorize Chainlink (or LiquidApps) to our communities to setup automation
 - **Backend:** No further work will be required if we manage to do this with a solution similar to Chainlink. If not, we will need to develop a similar, centralized one. It must allow for **triggers** based on our contract ACTIONs:
   - `upsertactions` (when actions are changed in a community)
   - `upsertobjectives` (when objectives are changed in a community)
-  - `claimaction` (when an user initiates a request for claiming an action)
+  - `claimaction` (when a user initiates a request for claiming an action)
   - `verifyclaim` (when other users vote to approve/reject a claim)
-  - `reward` (when admins reward users a certain amount of tokens)
-  
-with the following **Effects**:
-
-  - `assignrole`
-  
-under available **Conditions**:
-
-  - Count: a certain number of times a trigger must be activated
-  - Time scope: a limit date like "5 days, 1 month" and so on
-  - Existing roles: a filter that makes sure the affected users have necessary roles
+  - `reward` (when admins reward users a certain amount of tokens) 
+  - with the following **Effects**:
+    - `assignrole`
+  - under available **Conditions**:
+    - Count: a certain number of times a trigger must be activated
+    - Time scope: a limit date like "5 days, 1 month" and so on
+    - Existing roles: a filter that makes sure the affected users have necessary roles
 - **Extensive tests for those workers:** Given its complexity, it will required thoughtful testing
 - **Frontend:** 
   - Screens for assigning roles, managed by community admins
@@ -394,8 +396,8 @@ under available **Conditions**:
 - **Estimated duration:** 1 month
 - **FTE:** 6
 - **Costs:** 10,000.00 USD
-- **Testing Guide:** pre-implementation tests analyzing functionality and usability along with the proposed design.
-- **Documentation:** We will provide both inline documentation of the code and a basic tutorial that explains how a user can use it within their communities. We publish our platform tutorials here: https://medium.com/cambiatus-tutorials
+- **Testing Guide:** pre-implementation tests analyzing functionality and usability along with the proposed design
+- **Documentation:** We will provide both inline documentation of the code and a basic tutorial that explains how a user can use it within their communities. We publish our platform tutorials [here](https://medium.com/cambiatus-tutorials)
 - **Feedback gathering and tutorials:** We will do live meetings and workshops to showcase basic usage and how existing communities could use this. Meetings will be in English, Spanish and Portuguese, languages that our communities use. With feedback we can prioritize next features and adjust as needed
 
 
@@ -404,7 +406,7 @@ Our first intent is to use the Roles & Permissions feature within the Cambiatus 
 
 With our Roles & Permissions implemented, we will address decision making next. We intend to implement a set of decision-aid methodologies to support our members by leveraging vast practical and theoretical experiences in the field of applied decision making that one of our co-founders has. We want to adapt and develop new methodologies to support decentralized governance processes, not only for Cambiatus members but also for other DAOs. Tools include voting and doing weighted multi signatures based on roles. We will provide some starter voting strategies like simple majority and qualified majority (qualifying and weighting votes based on roles acquired).
 
-During the year 2022, we've also started an internal training with our team and some key members of our communities using some decision making methodologies so we can get up to speed with how it's done before starting using roles to scope and implement decision making tools. Results have shown promise and motivated our team to continue learning and apply in the Cambiatus decision making process.
+During the year 2022, we've also started an internal training with our team and some key members of our communities using some decision making methodologies so we can get up to speed with how it's done before starting using roles to scope and implement decision making tools. Results have shown promise and motivated our team to continue learning and apply the Cambiatus decision making process.
 
 As we progress, we wish to build more refined voting systems, exploring POAPs/NFTs as achievement badges and ways to back up a member’s reputation in a certain community. With Roles & Permissions, we are allowed to explore different paths to decentralized decision making, using not only the amount of tokens one account has, but their history / relationship / collaboration within a certain DAO. Effectively moving away from giving governance power to those with more votes and instead valuing a member vote based on their learning, participation, history, relationship and collaboration with a certain community or DAO. We believe this to be a more human-like approach than what is commonly done in our industry.
 
