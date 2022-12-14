@@ -225,7 +225,7 @@ Only after this we start the co-design sessions, and we take the educational app
 
 We believe Cambiatus is a tool that is more accessible for “normies”, especially the ones that don’t have much understanding about crypto or communities that don’t speak fluent english (the language barrier is HUGE in Latam). One example is that we’re doing a co-design process with the Paiter Surui Indigenous community, aiming to create the first blockchain-based social currency in their tribe. How would they be able to use Hypha? We believe Cambiatus is easier to use than Hypha, with the most essential tools, and still helps communities create their own organizations to exchange value and coordinate themselves towards financial resiliency.
 
-Cambiatus is already the first step for many people entering the crypto ecosystem and discovering how to use social tokens and collaborate with DAOs. We already have [partner communities](https://www.cambiatus.com/communities) doing this like [Muda](https://www.instagram.com/mudaoutraseconomias/) and [Play4Change](https://www.play4change.io/), empowering people from favelas in Brazil, [Verdes](https://verdesmonteverde.com/) in Costa Rica and [Agelgil](https://www.cambiatus.com/agelgil) in Ethiopia.
+Cambiatus is the first step for many people entering the crypto ecosystem and discovering how to use social tokens and collaborate with DAOs. We already have [partner communities](https://www.cambiatus.com/communities) doing this like [Muda](https://www.instagram.com/mudaoutraseconomias/) and [Play4Change](https://www.play4change.io/), empowering people from favelas in Brazil, [Verdes](https://verdesmonteverde.com/) in Costa Rica and [Agelgil](https://www.cambiatus.com/agelgil) in Ethiopia. Our newest community called [Paiter Coin](https://www.cambiatus.com/povo-paiter-surui), co-created with the Paiter Suruí Indigenous People, in the quest to involve the people in community actions in the village and have their economy independent with their own currency.
 
 - **Karla:** MSc Community Development, Cambiatus co-founder, Shuttleworth Foundation Alumni and first Latinamerican Grantee, Singularity University Alumni, Asoblockchain Costa Rica Board Member, TEDx Costa Rica speaker.  Past experience:  10+ years working in community development and environmental projects in Costa Rica, supporting local communities, facilitating development and organizational processes. 2+ years collaborating with Enlivening Edge Magazine as a team member, an holacratic organization focused on Next-Stage Organizations. 5+ years developing and implementing Cambiatus Methodology and co-design processes. Co-organized the first EOS Hackathon in Brazil. Currently supporting the strengthening of the Costa Rican blockchain ecosystem.  Speaker focused on Impact, Governance, and ReFi. [Full CV](https://docs.google.com/document/d/1ayR6cLJppXk-9YHpFVSyw_EQ7zDvtT69JPVuLgH-PJI/edit?usp=sharing) 
 
@@ -281,7 +281,12 @@ This feature will require interactions on:
 
 Some resources:
 - [Figma reference with some discussion (in brazilian portuguese)](https://www.figma.com/file/IYaSqUD58quAZMIhqdi7WA/Roles-%26-Permissions?node-id=0%3A1)
-- [Slides for the presentation of Role and Permissions](https://www.figma.com/file/N724ADHvSImTQkYYnIPOoh/Proposta-ENF_Roles-%26-Permissions)
+- [Slides for the presentation of Role and Permissions](https://www.figma.com/proto/N724ADHvSImTQkYYnIPOoh/Proposta-ENF_Roles-%26-Permissions?page-id=0%3A1&node-id=26%3A49&viewport=957%2C254%2C0.29&scaling=contain&starting-point-node-id=26%3A49)
+- [Mental map](https://miro.com/app/board/uXjVOBYRrXc=/)
+- Storytelling Presentation in PDF: [Roles&Permissions.pdf](https://drive.google.com/file/d/1ba9zNnsYe2pBF_5lB5VfuGA1ekvz_WNC/view?usp=share_link)
+- [Mock-ups/designs of any UI components](https://www.figma.com/file/IYaSqUD58quAZMIhqdi7WA/Roles-%26-Permissions?node-id=551%3A7694&t=vO3s9hMAqvU7jIPd-1)
+- Wireframe in production: [Wireframe Roles and Permissions.pdf](https://drive.google.com/file/d/1yr7H5RMlMqKqgawuBTvsnA9f_1otgQ90/view?usp=share_link)
+
 
 ## Development Roadmap
 
