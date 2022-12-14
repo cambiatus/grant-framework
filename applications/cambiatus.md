@@ -127,7 +127,7 @@ It's an on-chain functionality so everything will be handled locally with the li
 - [Our architecture](https://www.figma.com/file/i4Azmx3APcQulJ1zmHNLIV/Cambiatus-Architecture?node-id=0%3A1), which can help other projects decide on their own path
 
 ### PoC/MVP or other relevant prior work or research on the topic
-Our current structure includes the following roles: members, validators and admins. These roles are beign used by our over 9000 users and have been used by them since 2018: 
+Our current structure includes the following roles: members, validators and admins. These roles are being used by our over 9000 users since 2018:
 
 - Members: `buy`, `sell`, `claim`
 - Validator:  `approve` or `reject` claims (voting)
