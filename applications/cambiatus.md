@@ -221,7 +221,7 @@ Although we admire and like projects like Hypha, Cambiatus is different because 
 
 We also have translations to portuguese, spanish, catalan, amharic and english. Our educational content is in english, translated to portuguese and spanish - and we have community support in those three languages. Being pluricultural and language inclusive to our communities is a must.
 
-Our biggest differential to our communities is that all they're all provided with assisted tokenomics co-design sessions - we don’t assume they know how to create a currency or develop their own tokenomics. We added a human layer to enable our partner communities to use our tools and be able to promote change in their economic context. It's a constructivist method, allowing co-creation, co-organization and aligning objectives under a group.
+Our biggest differential to our communities is that they're all provided with assisted tokenomics co-design sessions - we don’t assume they know how to create a currency or develop their own tokenomics. We added a human layer to enable our partner communities to use our tools and be able to promote change in their economic context. It's a constructivist method, allowing co-creation, co-organization and aligning objectives under a group.
 
 [Our methodology starts with a learning path](https://www.cambiatus.com/learningpath) that helps community leaders understand what is money, how money is created, what are social currencies, examples, and then we start explaining about crypto, blockchain, DAOs, collaborative businesses and evolved Coops using blockchain technologies.
 
