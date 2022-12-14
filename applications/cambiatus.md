@@ -36,7 +36,7 @@ This is a followup-grant from a successful Pomelo Grant: https://pomelo.io/grant
 - [Wireframe in production](https://drive.google.com/file/d/1yr7H5RMlMqKqgawuBTvsnA9f_1otgQ90/view?usp=share_link)
 
 
-This grants work is a follow up on a previous grant. For that reason, it's important to outline our data models with some documentation that can be found [here](https://github.com/cambiatus/contracts/blob/master/community/community.hpp)
+This grant builds on top of another successful [grant](https://pomelo.io/grants/cambiatus) we worked on. Because of that, we already have some data models and documentation, which can be found [here](https://github.com/cambiatus/contracts/blob/master/community/community.hpp) and in the following code snippets:
 
 ```cpp
   /**
